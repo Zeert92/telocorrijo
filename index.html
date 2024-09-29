@@ -1,63 +1,3 @@
-<!-- <!DOCTYPE html>
-<html lang="es">
-<!-- 
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Telocorrijo</title>
-    <link rel="stylesheet" href="paginaWeb.css">
-</head>
-
-<body>
-    <div id="color"></div>
-    <div id="color2"></div>
-
-    <div class="contenedor-general">
-        <div class="contenedor-imagen"></div>
-    </div>
-
-    <nav id="botones">
-        <button id="btn-inicio">INICIO</button>
-        <button id="btn-nosotros">NOSOTROS</button>
-        <button id="btn-servicios">NUESTROS SERVICIOS</button>
-        <button id="btn-clientes">NUESTROS CLIENTES</button>
-        <button id="btn-registro">REGISTRO</button>
-    </nav>
-
-    <div id="color2"></div>
-    <div id="color"></div>
-
-
-    <section id="inicio" class="seccion">
-        <h1>INICIO</h1>
-        <p>Hola, somos el Cirko Marisko</p>
-    </section>
-
-    <section id="nosotros" class="seccion">
-        <h1 id="titulo-nosotros">NOSOTROS</h1>
-        <p>Somos una empresa especializada en el asesoramiento de tesis de grado, trabajos de fin de curso, TGFS; manejo de todas las áreas y todos los niveles educativos.</p>
-    </section>
-
-    <section id="servicios" class="seccion">
-        <h1>NUESTROS SERVICIOS</h1>
-        <p>Somos especialistas en hacer tesis.</p>
-    </section>
-
-    <section id="clientes" class="seccion">
-        <h1>NUESTROS CLIENTES</h1>
-        <p>A las personas que les hemos hecho sus tesis quedan fascinadas.</p>
-    </section>
-
-    <section id="registro" class="seccion">
-        <h1>REGISTRO</h1>
-        <p>Regístrate para obtener más información.</p>
-    </section>
-    <script src="paginaWeb.js"></script>
-</body>
-
-</html> 
---> 
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -86,9 +26,10 @@
         nav ul {
             list-style: none;
             padding: 0;
+            margin: 0;
+            display: flex;
         }
         nav ul li {
-            display: inline;
             margin: 0 15px;
         }
         nav ul li a {
@@ -96,7 +37,6 @@
             text-decoration: none;
             padding: 14px 20px;
             display: inline-block;
-            cursor: pointer;
         }
         nav ul li a:hover {
             background-color: #ddd;
@@ -105,10 +45,10 @@
         section {
             padding: 20px;
             text-align: center;
-            display: none; /* Ocultar todas las secciones al inicio */
+            display: none; 
         }
         .active {
-            display: block; /* Mostrar solo la sección activa */
+            display: block;
         }
         .services-button {
             background-color: #4CAF50;
@@ -129,6 +69,23 @@
             position: fixed;
             bottom: 0;
             width: 100%;
+        }
+
+
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column; 
+                width: 100%;
+            }
+            nav ul li {
+                margin: 0;
+            }
+            nav ul li a {
+                padding: 15px; 
+                text-align: center;
+                display: block;
+                width: 100%; 
+            }
         }
     </style>
 </head>
@@ -156,7 +113,7 @@
     <section id="servicios">
         <h2>Nuestros Servicios</h2>
         <p>Ofrecemos una amplia gama de servicios que incluyen consultoría empresarial, corrección de textos, marketing digital, y más.</p>
-        <a href="https://wa.me/+57 3102312170?text=Hola,%20quiero%20más%20información%20sobre%20sus%20servicios" class="services-button">Más información</a>
+        <a href="https://wa.me/573102312170?text=Hola,%20quiero%20más%20información%20sobre%20sus%20servicios" class="services-button">Más información</a>
     </section>
 
     <section id="nosotros">
@@ -186,13 +143,12 @@
 
     <script>
         function showSection(sectionId) {
-            // Ocultar todas las secciones
+   
             const sections = document.querySelectorAll('section');
             sections.forEach(section => {
                 section.classList.remove('active');
             });
 
-            // Mostrar la sección seleccionada
             const activeSection = document.getElementById(sectionId);
             activeSection.classList.add('active');
         }
