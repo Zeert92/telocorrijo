@@ -6,7 +6,7 @@
     <meta name="description" content="Página oficial de Telocorrijo">
     <title>Telocorrijo</title>
     <style>
-        {
+        * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
@@ -18,26 +18,26 @@
             background-color: #f4f4f4;
         }
         header {
-            background-color: #003366; 
+            background-color: #003366;
             color: #FFD700;
             text-align: center;
             padding: 1.5rem;
             font-size: 2rem;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
         }
         nav {
             display: flex;
             justify-content: center;
             background-color: #004C99;
             padding: 1rem 0;
-            width: 100%; 
+            width: 100%;
         }
         nav ul {
             list-style: none;
             padding: 0;
             margin: 0;
             display: flex;
-            flex-direction: row; 
+            flex-direction: row;
             width: 100%;
             max-width: 1200px;
         }
@@ -53,23 +53,22 @@
             background-color: #FFD700;
             border-radius: 30px;
             transition: background-color 0.3s ease, transform 0.3s ease;
-            width: 100%; 
-            box-sizing: border-box;
+            width: 100%;
             text-align: center;
         }
         nav ul li a:hover {
-            background-color: #FFC300; 
+            background-color: #FFC300;
             color: #003366;
-            transform: scale(1.05); 
+            transform: scale(1.05);
         }
         section {
             padding: 20px;
             text-align: center;
-            display: none; 
+            display: none;
             background-color: #fff;
             margin: 20px;
-            border-radius: 10px; 
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
         }
         .active {
             display: block;
@@ -89,6 +88,22 @@
             background-color: #002147;
             transform: scale(1.05);
         }
+        .form-button {
+            background-color: #FFD700;
+            color: #003366;
+            padding: 10px 20px;
+            border: none;
+            text-decoration: none;
+            border-radius: 30px;
+            margin-top: 15px;
+            cursor: pointer;
+            display: inline-block;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+        .form-button:hover {
+            background-color: #FFC300;
+            transform: scale(1.05);
+        }
         footer {
             background-color: #003366;
             color: white;
@@ -98,19 +113,17 @@
             bottom: 0;
             width: 100%;
         }
-
-       
         @media (max-width: 768px) {
             nav ul {
                 flex-direction: column;
-                padding: 0 10px; 
+                padding: 0 10px;
             }
             nav ul li {
-                margin: 10px 0; 
+                margin: 10px 0;
             }
             nav ul li a {
-                width: calc(100% - 20px); 
-                margin: 0 auto; 
+                width: calc(100% - 20px);
+                margin: 0 auto;
             }
         }
     </style>
@@ -139,7 +152,7 @@
     <section id="servicios">
         <h2>Nuestros Servicios</h2>
         <p>Ofrecemos una amplia gama de servicios que incluyen consultoría empresarial, corrección de textos, marketing digital, y más.</p>
-        <a href="https://wa.me/+57 3102312170?text=Hola,%20quiero%20más%20información%20sobre%20sus%20servicios" class="services-button">Más información</a>
+        <a href="https://wa.me/573102312170?text=Hola,%20quiero%20más%20información%20sobre%20sus%20servicios" class="services-button">Más información</a>
     </section>
 
     <section id="nosotros">
@@ -159,7 +172,7 @@
             <input type="text" id="name" name="name"><br><br>
             <label for="email">Correo Electrónico:</label><br>
             <input type="email" id="email" name="email"><br><br>
-            <input type="submit" value="Registrarse">
+            <button class="form-button" type="submit">Registrarse</button>
         </form>
     </section>
 
@@ -169,12 +182,13 @@
 
     <script>
         function showSection(sectionId) {
+            // Ocultar todas las secciones
             const sections = document.querySelectorAll('section');
             sections.forEach(section => {
                 section.classList.remove('active');
             });
 
-
+            // Mostrar la sección seleccionada
             const activeSection = document.getElementById(sectionId);
             activeSection.classList.add('active');
         }
