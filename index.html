@@ -7,7 +7,7 @@
     <title>Telocorrijo</title>
     <style>
         {
-            box-sizing: border-box; /* Aplicamos box-sizing a todos los elementos */
+            box-sizing: border-box;
             margin: 0;
             padding: 0;
         }
@@ -18,61 +18,61 @@
             background-color: #f4f4f4;
         }
         header {
-            background-color: #003366; /* Azul oscuro */
-            color: #FFD700; /* Amarillo dorado */
+            background-color: #003366; 
+            color: #FFD700;
             text-align: center;
             padding: 1.5rem;
             font-size: 2rem;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
         nav {
             display: flex;
             justify-content: center;
-            background-color: #004C99; /* Azul intermedio */
+            background-color: #004C99;
             padding: 1rem 0;
-            width: 100%; /* Aseguramos que el nav ocupe el 100% del ancho */
+            width: 100%; 
         }
         nav ul {
             list-style: none;
             padding: 0;
             margin: 0;
             display: flex;
-            flex-direction: row; /* Predeterminado a fila */
-            width: 100%; /* Para que ocupe todo el ancho del contenedor */
-            max-width: 1200px; /* Limitar a 1200px en pantallas grandes */
+            flex-direction: row; 
+            width: 100%;
+            max-width: 1200px;
         }
         nav ul li {
             margin: 5px;
-            flex: 1; /* Asegura que los botones ocupen todo el espacio disponible */
+            flex: 1;
         }
         nav ul li a {
             color: white;
             text-decoration: none;
             padding: 12px 20px;
             display: block;
-            background-color: #FFD700; /* Amarillo */
-            border-radius: 30px; /* Bordes redondeados */
-            transition: background-color 0.3s ease, transform 0.3s ease; /* Transición suave */
-            width: 100%; /* Ocupa todo el ancho del contenedor */
-            box-sizing: border-box; /* Evitar que los márgenes afecten el tamaño */
+            background-color: #FFD700;
+            border-radius: 30px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            width: 100%; 
+            box-sizing: border-box;
             text-align: center;
         }
         nav ul li a:hover {
-            background-color: #FFC300; /* Un tono más oscuro de amarillo */
-            color: #003366; /* Azul oscuro */
-            transform: scale(1.05); /* Ligeramente agrandar al hacer hover */
+            background-color: #FFC300; 
+            color: #003366;
+            transform: scale(1.05); 
         }
         section {
             padding: 20px;
             text-align: center;
-            display: none; /* Ocultar todas las secciones al inicio */
+            display: none; 
             background-color: #fff;
             margin: 20px;
-            border-radius: 10px; /* Bordes redondeados */
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra */
+            border-radius: 10px; 
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
         }
         .active {
-            display: block; /* Mostrar solo la sección activa */
+            display: block;
         }
         .services-button {
             background-color: #003366;
@@ -81,36 +81,36 @@
             border: none;
             cursor: pointer;
             text-decoration: none;
-            border-radius: 30px; /* Bordes redondeados */
+            border-radius: 30px;
             margin-top: 15px;
-            transition: background-color 0.3s ease, transform 0.3s ease; /* Transición suave */
+            transition: background-color 0.3s ease, transform 0.3s ease;
         }
         .services-button:hover {
-            background-color: #002147; /* Tono más oscuro de azul */
-            transform: scale(1.05); /* Efecto de agrandamiento */
+            background-color: #002147;
+            transform: scale(1.05);
         }
         footer {
             background-color: #003366;
             color: white;
             text-align: center;
             padding: 1.5rem 0;
-            position: relative; /* Cambiar a relativo para evitar problemas en móviles */
+            position: relative;
             bottom: 0;
             width: 100%;
         }
 
-        /* Estilos responsivos para móviles */
+       
         @media (max-width: 768px) {
             nav ul {
-                flex-direction: column; /* Mostrar botones en columna en móviles */
-                padding: 0 10px; /* Espacio lateral para que no se pegue al borde */
+                flex-direction: column;
+                padding: 0 10px; 
             }
             nav ul li {
-                margin: 10px 0; /* Espacio entre los botones verticalmente */
+                margin: 10px 0; 
             }
             nav ul li a {
-                width: calc(100% - 20px); /* Asegura que los botones no excedan el ancho */
-                margin: 0 auto; /* Centramos los botones */
+                width: calc(100% - 20px); 
+                margin: 0 auto; 
             }
         }
     </style>
@@ -169,13 +169,12 @@
 
     <script>
         function showSection(sectionId) {
-            // Ocultar todas las secciones
             const sections = document.querySelectorAll('section');
             sections.forEach(section => {
                 section.classList.remove('active');
             });
 
-            // Mostrar la sección seleccionada
+
             const activeSection = document.getElementById(sectionId);
             activeSection.classList.add('active');
         }
