@@ -40,11 +40,12 @@
             color: white;
             text-decoration: none;
             padding: 12px 20px;
-            display: flex;
-            justify-content: center;
+            display: block;
             background-color: #FFD700; /* Amarillo */
             border-radius: 30px; /* Bordes más redondeados */
             transition: background-color 0.3s ease, transform 0.3s ease; /* Transición suave */
+            width: 100%; /* Ocupa todo el ancho del contenedor */
+            box-sizing: border-box; /* Evitar que los márgenes afecten el tamaño */
         }
         nav ul li a:hover {
             background-color: #FFC300; /* Un tono más oscuro de amarillo */
@@ -93,10 +94,14 @@
             nav ul {
                 flex-direction: column; /* Mostrar botones en columna en móviles */
                 width: 100%; /* Ocupar todo el ancho */
+                padding: 0 10px; /* Espacio lateral para que no se pegue al borde */
             }
             nav ul li {
                 margin: 10px 0; /* Espacio entre los botones verticalmente */
-                width: 90%; /* Hacer que los botones ocupen todo el ancho */
+                width: 100%; /* Hacer que los botones ocupen todo el ancho */
+            }
+            nav ul li a {
+                margin: 0 10px; /* Espacio lateral para que los botones no se salgan */
             }
         }
     </style>
@@ -125,7 +130,7 @@
     <section id="servicios">
         <h2>Nuestros Servicios</h2>
         <p>Ofrecemos una amplia gama de servicios que incluyen consultoría empresarial, corrección de textos, marketing digital, y más.</p>
-        <a href="https://wa.me/+57 3102312170?text=Hola,%20quiero%20más%20información%20sobre%20sus%20servicios" class="services-button">Más información</a>
+        <a href="https://wa.me/573102312170?text=Hola,%20quiero%20más%20información%20sobre%20sus%20servicios" class="services-button">Más información</a>
     </section>
 
     <section id="nosotros">
