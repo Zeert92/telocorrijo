@@ -6,6 +6,11 @@
     <meta name="description" content="Página oficial de Telocorrijo">
     <title>Telocorrijo</title>
     <style>
+        * {
+            box-sizing: border-box; /* Aplicamos box-sizing a todos los elementos */
+            margin: 0;
+            padding: 0;
+        }
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
@@ -25,6 +30,7 @@
             justify-content: center;
             background-color: #004C99; /* Azul intermedio */
             padding: 1rem 0;
+            width: 100%; /* Aseguramos que el nav ocupe el 100% del ancho */
         }
         nav ul {
             list-style: none;
@@ -32,9 +38,12 @@
             margin: 0;
             display: flex;
             flex-direction: row; /* Predeterminado a fila */
+            width: 100%; /* Para que ocupe todo el ancho del contenedor */
+            max-width: 1200px; /* Limitar a 1200px en pantallas grandes */
         }
         nav ul li {
             margin: 5px;
+            flex: 1; /* Asegura que los botones ocupen todo el espacio disponible */
         }
         nav ul li a {
             color: white;
@@ -42,10 +51,11 @@
             padding: 12px 20px;
             display: block;
             background-color: #FFD700; /* Amarillo */
-            border-radius: 30px; /* Bordes más redondeados */
+            border-radius: 30px; /* Bordes redondeados */
             transition: background-color 0.3s ease, transform 0.3s ease; /* Transición suave */
             width: 100%; /* Ocupa todo el ancho del contenedor */
             box-sizing: border-box; /* Evitar que los márgenes afecten el tamaño */
+            text-align: center;
         }
         nav ul li a:hover {
             background-color: #FFC300; /* Un tono más oscuro de amarillo */
@@ -93,15 +103,14 @@
         @media (max-width: 768px) {
             nav ul {
                 flex-direction: column; /* Mostrar botones en columna en móviles */
-                width: 100%; /* Ocupar todo el ancho */
                 padding: 0 10px; /* Espacio lateral para que no se pegue al borde */
             }
             nav ul li {
                 margin: 10px 0; /* Espacio entre los botones verticalmente */
-                width: 100%; /* Hacer que los botones ocupen todo el ancho */
             }
             nav ul li a {
-                margin: 0 10px; /* Espacio lateral para que los botones no se salgan */
+                width: calc(100% - 20px); /* Asegura que los botones no excedan el ancho */
+                margin: 0 auto; /* Centramos los botones */
             }
         }
     </style>
@@ -130,7 +139,7 @@
     <section id="servicios">
         <h2>Nuestros Servicios</h2>
         <p>Ofrecemos una amplia gama de servicios que incluyen consultoría empresarial, corrección de textos, marketing digital, y más.</p>
-        <a href="https://wa.me/573102312170?text=Hola,%20quiero%20más%20información%20sobre%20sus%20servicios" class="services-button">Más información</a>
+        <a href="https://wa.me/+57 3102312170?text=Hola,%20quiero%20más%20información%20sobre%20sus%20servicios" class="services-button">Más información</a>
     </section>
 
     <section id="nosotros">
