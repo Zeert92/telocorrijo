@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -8,83 +7,96 @@
     <title>Telocorrijo</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
             padding: 0;
             background-color: #f4f4f4;
         }
         header {
-            background-color: #4CAF50;
-            color: white;
+            background-color: #003366; /* Azul oscuro */
+            color: #FFD700; /* Amarillo dorado */
             text-align: center;
-            padding: 1rem;
+            padding: 1.5rem;
+            font-size: 2rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra ligera */
         }
         nav {
             display: flex;
             justify-content: center;
-            background-color: #333;
+            background-color: #004C99; /* Azul intermedio */
+            padding: 1rem 0;
         }
         nav ul {
-        list-style: none;
-        padding: 0;
-        margin: 0;
-        display: flex;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: row; /* Predeterminado a fila */
         }
         nav ul li {
             margin: 5px;
         }
         nav ul li a {
-        color: white;
-        text-decoration: none;
-        padding: 10px 15px;
-        display: block;
-        border-radius: 5px;
-        display: flex;
-        justify-content: center;
-}
+            color: white;
+            text-decoration: none;
+            padding: 12px 20px;
+            display: flex;
+            justify-content: center;
+            background-color: #FFD700; /* Amarillo */
+            border-radius: 30px; /* Bordes más redondeados */
+            transition: background-color 0.3s ease, transform 0.3s ease; /* Transición suave */
+        }
         nav ul li a:hover {
-            background-color: #ddd;
-            color: black;
+            background-color: #FFC300; /* Un tono más oscuro de amarillo */
+            color: #003366; /* Azul oscuro */
+            transform: scale(1.05); /* Ligeramente agrandar al hacer hover */
         }
         section {
             padding: 20px;
             text-align: center;
-            display: none; 
+            display: none; /* Ocultar todas las secciones al inicio */
+            background-color: #fff;
+            margin: 20px;
+            border-radius: 10px; /* Bordes redondeados */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra */
         }
         .active {
-            display: block; 
+            display: block; /* Mostrar solo la sección activa */
         }
         .services-button {
-            background-color: #4CAF50;
+            background-color: #003366;
             color: white;
             padding: 10px 20px;
             border: none;
             cursor: pointer;
             text-decoration: none;
-            border-radius: 5px;
+            border-radius: 30px; /* Bordes redondeados */
+            margin-top: 15px;
+            transition: background-color 0.3s ease, transform 0.3s ease; /* Transición suave */
         }
         .services-button:hover {
-            background-color: #45a049;
+            background-color: #002147; /* Tono más oscuro de azul */
+            transform: scale(1.05); /* Efecto de agrandamiento */
         }
         footer {
-            background-color: #333;
+            background-color: #003366;
             color: white;
             text-align: center;
-            padding: 1rem 0;
-            position: relative;
+            padding: 1.5rem 0;
+            position: relative; /* Cambiar a relativo para evitar problemas en móviles */
             bottom: 0;
             width: 100%;
         }
 
-
+        /* Estilos responsivos para móviles */
         @media (max-width: 768px) {
             nav ul {
-                flex-direction: column;
-                width: 100%;
+                flex-direction: column; /* Mostrar botones en columna en móviles */
+                width: 100%; /* Ocupar todo el ancho */
             }
             nav ul li {
-                margin: 5px 0; 
-                width: 100%;
+                margin: 10px 0; /* Espacio entre los botones verticalmente */
+                width: 90%; /* Hacer que los botones ocupen todo el ancho */
             }
         }
     </style>
@@ -113,7 +125,7 @@
     <section id="servicios">
         <h2>Nuestros Servicios</h2>
         <p>Ofrecemos una amplia gama de servicios que incluyen consultoría empresarial, corrección de textos, marketing digital, y más.</p>
-        <a href="https://wa.me/573102312170?text=Hola,%20quiero%20más%20información%20sobre%20sus%20servicios" class="services-button">Más información</a>
+        <a href="https://wa.me/+57 3102312170?text=Hola,%20quiero%20más%20información%20sobre%20sus%20servicios" class="services-button">Más información</a>
     </section>
 
     <section id="nosotros">
@@ -143,12 +155,13 @@
 
     <script>
         function showSection(sectionId) {
-
+            // Ocultar todas las secciones
             const sections = document.querySelectorAll('section');
             sections.forEach(section => {
                 section.classList.remove('active');
             });
 
+            // Mostrar la sección seleccionada
             const activeSection = document.getElementById(sectionId);
             activeSection.classList.add('active');
         }
